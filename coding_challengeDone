@@ -8,6 +8,8 @@ print("Best of Luck!",name1)
 def main():
     """Start a guessing music genre"""
     print("\nGuess the music genre! Choose one of music genre : Jazz,Pop,Rock,Balada,HipHop")
+
+     """Choose only one music genre"""
     music = ["Jazz","Pop","Rock","Balada","HipHop"]
 
     hint = random.choice(music)
@@ -16,17 +18,15 @@ def main():
 
     x = 3
 
+    """The looping start to process"""
     for guess_chance in range(1,4):
         guess = str(input("\nPick a music genre: "))
 
         if hint != guess:
             x -= 1
             print('You guess ' + guess + '. Unfortunately you got the wrong answer. \nPlease try again! You get ' + str(x) + ' chance left.')
-        elif hint == guess:
-            print("You guess " + guess + ". Congratulation you got it right!")  
-            break 
         else:
-            print("Chance remaining =",guess_chance)
+            print("You guess " + guess + ". Congratulation you got it right!")  
             break
 
     if guess == hint:
